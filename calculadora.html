@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Calculadora</title>
+		<script>
+		function calcular(){
+			var x=parseFloat(document.getElementById("op1").value);
+			var y=parseFloat(document.getElementById("op2").value);
+			var z=document.getElementById("op").value;
+			switch(z){
+				case '+':
+					x=x+y;
+				break;
+				case '-':
+					x=x-y;
+				break;
+				case '*':
+					x=x*y;
+				break;
+				case '/':
+					if(y!=0)
+					x=x/y;
+					else x=0;
+				break;
+			}	
+			document.getElementById("resultado").value=x;
+						
+		}
+		</script>
+	</head>
+	<body>
+		<h1>Calculadora</h1>
+		<table>
+		<tr> <td> <input type="text" id="op1" placeholder="Operador 1" > </tr>
+		<tr> <td> <input type="text" id="op2" placeholder="Operador 2"> </tr>
+		<tr> <td><center> 
+		<select id="op">
+			<option value="+"> Sumar</option>
+			<option value="-"> Resta</option>
+			<option value="*"> Multiplicación</option>
+			<option value="/"> Division</option>
+		</select>
+		
+		</center></tr>
+		<tr><td><center><input type="button" value="Calcular" onclick="calcular()"></center></tr>
+		<tr> <td><input type="text" id="resultado" placeholder="Resultado..."></tr>
+		</table
+	</body>
+</html>
