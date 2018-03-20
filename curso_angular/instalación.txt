@@ -1,0 +1,13 @@
+----->Backend<-------
+1.comprobar si tiene java instalado si no instalarlo.
+
+2.descargar maven: https://maven.apache.org/download.cgi
+
+3.descargar STS de: https://spring.io/tools/sts/all
+
+
+------>fron end<----
+--> esta es la guia de angular: https://angular.io/guide/quickstart
+
+1.descargar node.js y npm https://nodejs.org/en/download/
+2.descargar Angular CLI: npm install -g @angular/cli
