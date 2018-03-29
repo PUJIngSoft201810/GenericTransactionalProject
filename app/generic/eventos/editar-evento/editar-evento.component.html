@@ -1,0 +1,27 @@
+
+<ul>
+    <li *ngFor="let evento of eventos" >
+
+        <a [routerLink]="['/eventos/editor',evento.id]"   routerLinkActive='router-link-active'>
+
+          <button class="button" type="button" name="evento">
+          ID: {{evento.id}}
+          <br>Nombre: {{evento.nombre}}
+          <br>Categoria: {{evento.categoria}}
+          <br>Lugar: {{evento.lugar}}
+                  </button>  
+
+        </a>
+      <br>
+    </li>
+    <a [routerLink]="['/eventos/add-evento']" routerLinkActive='router-link-active'>
+      <button type="button" name="mas">+</button>  
+      </a>
+</ul>
+
+
+<a [routerLink]="['/eventos']" routerLinkActive='router-link-active'>
+  <button type="button" name="">Volver</button>  
+  </a>
+
+  
