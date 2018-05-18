@@ -1,0 +1,79 @@
+<form (ngSubmit)="procesarEvento()">
+ 
+  <label for="Id">Id</label>
+  <input type="text"  name="id" id="id" [(ngModel)]="evento.id" readonly>
+  <br> <br>
+  <label for="Usuario">Usuario</label>
+  <input type="text" name="usuario" id="usuario" [(ngModel)]="evento.usuario" >
+  <br> <br>
+   
+  <label id="Categoria" for="categoria">Categoria:</label>
+  
+  <select>
+    <option value="Conciertos">Conciertos</option>
+    <option value="Deportes">Deportes</option>
+    <option value="Cultura">Cultura</option>
+    <option value="Recomendados">Recomendados</option>
+    <option value="Gratis">Gratis...</option>
+  </select>
+
+  <br><br>
+  <label for="descripcion">Acerca de...</label>
+  <br>
+
+
+  <input type="text" autofocus name="descripcion" id="descripcion" [(ngModel)]="evento.descripcion" placeholder="Descripción...">
+
+  <br><br>
+  <label for="importante">Qué debo saber</label>
+  <br>
+  <input type="text" autofocus name="importante" id="importante" [(ngModel)]="evento.importante" placeholder="Importante...">
+
+  <br><br>
+  <label for="info">Información del Evento</label>
+  
+  <br><br>
+  <label for="lugar">Lugar</label>
+  <input type="text" autofocus name="lugar" id="lugar" [(ngModel)]="evento.lugar" placeholder="Dirección">
+  
+  
+
+  <br><br>
+  <label for="hInicio">Hora Inicio</label>
+  <input type="time" autofocus name="hora_inicio" id="hora_inicio" [(ngModel)]="evento.hora_inicio" >
+
+  <br><br>
+  <label for="hFin">Hora Fin</label>
+  <input type="time" autofocus name="hora_fin" id="hora_fin" [(ngModel)]="evento.hora_fin" >
+
+  <br><br>
+  <label for="fInicio">Fecha Inicio</label>
+  <input type="date" autofocus name="fecha_inicio" id="fecha_inicio" [(ngModel)]="evento.fecha_inicio" >
+
+  <br><br>
+  <label for="fecha_fin">Fecha Fin</label>
+  <input type="date" autofocus name="fecha_fin" id="fecha_fin" [(ngModel)]="evento.fecha_fin" >
+
+  <br><br>
+  <label for="lblCosto">Costo</label>
+  <input type="checkbox" name="check1" value="entrada_Libre" [(ngModel)]="evento.Entrada">Entrada Libre
+  <input type="checkbox" name="check2" value="entrada_Paga" >Entrada Paga    
+  <label for="lbl$">$</label>
+  <input type="number" autofocus name="valor_entrada" id="valor_entrada" [(ngModel)]="evento.valor_entrada" placeholder="0">
+  
+  <br><br>
+  <label for="tipo_pago">Tipo de Pago</label>   
+    <select name="tipo_pago" id="tipo_pago" [(ngModel)] = "evento.tipo_pago" >
+      <option value="Comision">Comisión</option>
+      <option value="Mensualidad">Mensualidad</option>
+      <option value="No_Aplica">No Aplica</option>
+    </select>
+
+  <div style="text-align:center">
+        <button type="submit">Guardar</button>
+        <a [routerLink]="['/eventos']" routerLinkActive='router-link-active'>
+          <button type="button" name="Volver">Volver</button>  
+          </a>
+    </div>
+ 
+</form>

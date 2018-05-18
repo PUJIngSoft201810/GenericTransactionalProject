@@ -1,0 +1,40 @@
+
+  
+  <div >
+      <label id="lblOrden" for="orden">Ordenado por:</label>
+  <select>
+    <option value="proximos">Próximos a finalizar</option>
+    <option value="recientes">Más reciente</option>
+    <option value="acendente">Fecha-Ascendente</option>
+    <option value="descendente">Fecha-Descendente</option>
+  </select>
+
+  <label id="lblCategoría" for="categoria">Categoría:</label>
+
+  <select>
+    <option value="Conciertos">Conciertos</option>
+    <option value="Deportes">Deportes</option>
+    <option value="Cultura">Cultura</option>
+    <option value="Turismo">Turismo</option>
+    <option value="Recomendados">Recomendados</option>
+    <option value="Gratis">Gratis</option>
+    
+    
+  </select>
+
+
+  <a [routerLink]="['/eventos/']" routerLinkActive='router-link-active'>
+    <button type="buttonAddevento" name="agregarevento">Ordenar</button>
+    </a>
+      
+  <a [routerLink]="['/eventos/add-evento']" routerLinkActive='router-link-active'>
+    <button type="buttonAddevento" name="agregarevento">Agregar Evento</button>
+    </a>
+
+    <a [routerLink]="['/eventos/editar-evento']" routerLinkActive='router-link-active'>
+      <button type="buttonAddevento" name="editarevento">Editar Evento</button>
+      </a>
+
+</div>
+
+

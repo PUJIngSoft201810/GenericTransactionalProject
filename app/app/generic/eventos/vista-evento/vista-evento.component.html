@@ -1,0 +1,33 @@
+<br>ID: {{evento.id}}
+      <br>Nombre: {{evento.nombre}}
+      <br>Categoria: {{evento.categoria}}
+      <br>Descripción: {{evento.descripcion}}
+      <br>Importante: {{evento.importante}}
+      <br>Usuario: {{evento.usuario}}
+      <br>Lugar: {{evento.lugar}}
+      <br>Hora Inicio:{{evento.hora_inicio}}
+      <br>Hora Fin:{{evento.hora_fin}}
+      <br>Fecha Inicio: {{evento.fecha_inicio}}
+      <br>Fecha Fin:{{evento.fecha_fin}}
+      <br>Valor Entrada:{{evento.valor_entrada}}
+      <br>Tipo de Pago:{{evento.tipo_pago}}
+      <br>
+      <div style="text-align:center">
+        
+        <a [routerLink]="[]" routerLinkActive='router-link-active'>
+            <button type="button" name="Volver">Participar</button>  
+          </a>
+        
+        <a [routerLink]="['/eventos']" routerLinkActive='router-link-active'>
+            <button type="button" name="Volver">Volver</button>  
+            </a>
+
+        
+          
+
+      </div> 
+      <br><br>
+        <div style="text-align:center">
+        <label id="calificar" for="calificar">Califica :</label>
+        <app-calificar></app-calificar>    
+      </div>
