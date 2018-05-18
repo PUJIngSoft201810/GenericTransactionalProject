@@ -1,0 +1,81 @@
+<h2>Detalle del servicio entretenimiento</h2>
+
+<form (ngSubmit)="procesar()">
+
+    <label for="categoriaEvento">Tipo de Evento</label>
+    
+    <select name="categoriaEvento" id="categoriaEvento" [(ngModel)]="evento.categoriaEvento" layout="column" flex layout-padding layout-margin >
+        <option value="concierto">Concierto</option>
+        <option value="deporte">Deportes</option>
+        <option value="teatro">Teatro</option>
+    </select>
+    <br>
+
+    <label for="edadMinima">Edad Minima</label>
+    <input type="number"   name="edadMinima" id="edadMinima" [(ngModel)]="evento.edadMinima" />
+    <br>
+
+    <label for="fechaEvento">Fecha del evento</label>
+    <input type="Date"   name="fechaEvento" id="fechaEvento" [(ngModel)]="evento.fechaEvento" />
+    <br>
+
+    <label for="horaApertura">Hora Apertura de Puestas</label>
+    <input type="Time"   name="horaApertura" id="horaApertura" [(ngModel)]="evento.horaApertura" />
+    <br>
+
+    <label for="horaInicio">Hora de Inicio</label>
+    <input type="Time"   name="horaInicio" id="horaInicio" [(ngModel)]="evento.horaInicio" />
+    <br>
+
+    <label for="horaInicio">Hora de Fin</label>
+    <input type="Time"   name="horaFin" id="horaFin" [(ngModel)]="evento.horaFin" />
+    <br>
+
+
+
+    <label for="artista">Artistas</label>
+    <input type="text"   name="artista" id="artista" [(ngModel)]="artista" placeholder="Escriba el artista"/>
+    
+    <a (click)="addArtista()">+</a>
+    <ul>
+      <li *ngFor="let a of evento.artistas" >{{a}}</li>
+    </ul>
+    
+    <br>
+    <label for="video">Link de Video Publicitario</label>
+    <input type="text"   name="video" id="video" [(ngModel)]="evento.video" />
+
+    <br>
+    
+
+    <label for="restricciones">Restricciones</label>
+    <input type="text"   name="restricciones" id="restricciones" [(ngModel)]="evento.restricciones" />
+  
+    <h3>Empresa Responsable</h3>
+
+    <label for="nombreEmpresa">Nombre</label>
+    <input type="text"   name="nombreEmpresa" id="nombreEmpresa" [(ngModel)]="empresa.nombre" />
+    <br>
+
+    <label for="nit">NIT</label>
+    <input type="text"   name="nit" id="nit" [(ngModel)]="empresa.nit" />
+    <br>
+    
+    <label for="ubicacion">Ubicacion</label>
+    <br>
+    <button type="button" (click)="siguiente()">Siguiente</button>
+    <br>
+    <button type="submit">Guardar</button>
+ 
+  
+  
+    <app-escenario  (onEscenario)="onEscenario($event)" (onLocalizaciones)="onLocalizaciones($event)" *ngIf="showEscenario"></app-escenario>
+  
+
+   
+
+
+
+  </form>
+  
+  

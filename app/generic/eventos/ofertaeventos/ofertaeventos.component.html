@@ -1,0 +1,23 @@
+
+<ul>
+  <li *ngFor="let evento of eventos" >
+
+ 
+ 
+  <a [routerLink]="['/eventos/vistaevento', evento.idServicio]" 
+      routerLinkActive='router-link-active'>
+    <button type="button">
+
+    <br>Nombre: {{evento.nombre}}
+    <br>Categoria: {{evento.categoria}}
+   
+    <br>Lugar: {{evento.lugar}}
+    <br>Fecha Inicio: {{evento.fechaInicio}}
+  
+  </button> 
+    </a>
+         
+  </li>
+</ul>
+
+

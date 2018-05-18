@@ -1,0 +1,30 @@
+
+
+
+<form (ngSubmit)="procesarTutoria()">
+
+  <label for="categoria">Categoria</label>
+  <input type="text"   name="categoria_educacion" id="categoria_educacion" [(ngModel)]="educacion.categoria_educacion" placeholder="Escriba la respectiva categoria"/>
+  <br>
+  <label for="tema">Temas</label>
+  
+  <input type="text"   name="tema" id="tema" [(ngModel)]="tema" placeholder="Escriba el tema"/>
+  <a (click)="addTema()">+</a>
+  <ul>
+    <li *ngFor="let t of educacion.temas" >{{t}}</li>
+  </ul>
+  
+  <br>
+  <label for="tipo">Tipo</label>
+
+
+  <select name="tipo" id="tipo" [(ngModel)]="educacion.tipo">
+      <option value="presencial">Presencial</option>
+      <option value="virtual">Virtual</option>
+  </select>
+  <br>
+  
+  <button type="submit">Guardar</button>
+
+
+</form>

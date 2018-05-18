@@ -8,7 +8,10 @@
      <a [routerLink]="['/educacion/tutoria-view',tutoria.id]" 
      routerLinkActive='router-link-active'>Ver</a>
 
+
+     <input type="button" value="Eliminar"  (click)="deleteTutoria(tutoria)"/>
     </li>
+
 
 </ul>
 
@@ -16,4 +19,3 @@
 <a [routerLink]="['/educacion/tutoria-add']" 
 
       routerLinkActive='router-link-active'>Agregar tutoria</a>
-  

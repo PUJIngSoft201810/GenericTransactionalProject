@@ -10,17 +10,29 @@ import { HomeComponent } from './generic/home/home.component';
 import { LoginComponent } from './generic/login/login.component';
 import { OfertasComponent } from './generic/educacion/ofertas/ofertas.component';
 import { TutoriaService } from './generic/share/services/tutoria.service';
-import { TutoriaaddComponent } from './generic/educacion/tutoriaadd/tutoriaadd.component';
+import { TutoriaaddComponent } from './generic/educacion/tutoria-add/tutoriaadd.component';
 import { TutoriaViewComponent } from './generic/educacion/tutoria-view/tutoria-view.component';
-import { EventosComponent } from './generic/eventos/eventos.component';
-import { HerramientasComponent } from './generic/eventos/herramientas/herramientas.component';
-import { EventoService } from './generic/share/services/evento.service';
-import { AddEventoComponent } from './generic/eventos/add-evento/add-evento.component';
-import { CalificarComponent } from './generic/eventos/calificar/calificar.component';
-import { OfertasEventosComponent } from './generic/eventos/ofertas-eventos/ofertas-eventos.component';
-import { VistaEventoComponent } from './generic/eventos/vista-evento/vista-evento.component';
-import { EditarEventoComponent } from './generic/eventos/editar-evento/editar-evento.component';
-import { EditorComponent } from './generic/eventos/editor/editor.component';
+import { PublicarComponent } from './generic/publicar/publicar.component';
+import { EducacionAddComponent } from './generic/educacion/educacion-add/educacion-add.component';
+import { MascotasAddComponent } from './generic/mascotas/mascotas-add/mascotas-add.component';
+import { EventosAddComponent } from './generic/eventos/eventos-add/eventos-add.component';
+import { ServicioService } from './generic/share/services/servicio.service';
+import { LocalizacionComponent } from './generic/localizacion/localizacion.component';
+import { EscenarioComponent } from './generic/eventos/escenario/escenario.component';
+import { OfertaeventosComponent } from './generic/eventos/ofertaeventos/ofertaeventos.component';
+import { VistaEventoComponent } from './generic/eventos/vistaevento/vistaevento.component';
+import { DraggableModule } from './generic/eventos/draggable/draggable.module';
+
+import {DragulaModule} from 'ng2-dragula';
+import { DrawDropComponent } from './generic/eventos/draw-drop/draw-drop.component';
+import { EscenarioViewComponent } from './generic/eventos/escenario-view/escenario-view.component';
+import { ZonaViewComponent } from './generic/eventos/zona-view/zona-view.component';
+//import { DraggableDirective } from './generic/eventos/draggable/draggable.directive';
+//import { MovableDirective } from './generic/eventos/draggable/movable.directive';
+
+
+//import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,26 +41,33 @@ import { EditorComponent } from './generic/eventos/editor/editor.component';
     OfertasComponent,
     TutoriaaddComponent,
     TutoriaViewComponent,
-    EventosComponent,
-    HerramientasComponent,
-    AddEventoComponent,
-    CalificarComponent,
-    OfertasEventosComponent,
+    PublicarComponent,
+    EducacionAddComponent,
+    MascotasAddComponent,
+    EventosAddComponent,
+    LocalizacionComponent,
+    EscenarioComponent,
+    OfertaeventosComponent,
     VistaEventoComponent,
-    EditarEventoComponent,
-    EditorComponent,
-    
+    DrawDropComponent,
+    EscenarioViewComponent,
+    ZonaViewComponent,
+    //DraggableDirective,
+    //MovableDirective
     //Component, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, DragulaModule
+    , DraggableModule
+   /* ,AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCLRWRZQVih4fmVqTPTXuJ9c4b9MXgdsnA'
+    })*/
   ] ,
  // providers: [Service],
-  providers: [TutoriaService,EventoService],
-  
+  providers: [TutoriaService,ServicioService],
  bootstrap: [AppComponent]
 })
 export class AppModule { }

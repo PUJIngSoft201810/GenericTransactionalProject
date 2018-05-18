@@ -1,0 +1,107 @@
+
+.box {
+    background: #BADA55;
+    border: 1px solid black;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: move;
+    user-select: none;
+  }
+
+  
+
+.area {
+    background: #C0FFEE;
+    padding: 40px;
+    border: 2px solid black;
+    
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+#semicirculo{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border-radius: 100px 100px 0 0;
+    background: tomato;
+}  
+
+#circulo{
+    width: 100px;
+    height: 100px;
+    background:red;
+    border-radius: 50px;
+  }
+
+
+#triangulo{
+    width: 0px;
+    height: 0px;
+
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid springgreen;
+}
+
+#trapecio{
+    width: 50px;
+    height: 80px;
+
+    border-bottom: 100px solid palevioletred;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+#pentagono{
+    position: relative;
+    width: 54px;
+    
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: green transparent;
+}
+
+#pentagono:before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -85px;
+    left: -18px;
+    border-width: 0 45px 35px;
+    border-style: solid;
+    border-color: transparent transparent green;
+}
+
+#hexagono{
+    width: 100px;
+    height: 55px;
+    background: gold;
+    position: relative;
+}
+
+#hexagono:before{
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solod gold;
+}
+
+#hexagono:after{
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solod gold;
+}

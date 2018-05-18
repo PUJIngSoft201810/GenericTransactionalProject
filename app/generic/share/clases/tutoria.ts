@@ -4,8 +4,8 @@ export class Tutoria {
     temas: string[];
     tipo: string;
     usuario: string;
- constructor(id: number, categoria: string, temas: string[],tipo: string,usuario: string){
-  this.id=id;
+ constructor( categoria: string, temas: string[],tipo: string,usuario: string){
+  
   this.categoria=categoria;
   this.temas=temas;
   this.tipo=tipo;

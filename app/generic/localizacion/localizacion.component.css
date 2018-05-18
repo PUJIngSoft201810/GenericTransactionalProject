@@ -1,0 +1,15 @@
+agm-map {
+    height: 300px;
+    width: 50%;
+  }
+
+  .map-wrapper {
+  /*  position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0*/
+        border: solid;
+    border-color: black;
+}
+

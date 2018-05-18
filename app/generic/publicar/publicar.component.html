@@ -1,0 +1,40 @@
+
+<h2>Publicar servicio</h2>
+
+
+
+
+
+
+    <form (ngSubmit)="procesar()">
+  
+        <label for="nombre">Nombre</label>
+        <input type="text" autofocus  name="nombre" id="nombre" [(ngModel)]="servicio.nombre" placeholder="Nombre del servicio"/>
+        <br>
+        <label for="descripcion">Descripción</label>
+        <input type="text"   name="descripcion" id="descripción" [(ngModel)]="servicio.descripcion" placeholder="descripción..."/>
+        <br>
+        <label for="descripcion">Categoria</label>
+        <select id="categoria" name="categoria"  [(ngModel)]="servicio.categoria">
+          <option value="educacion">Educación</option>
+          <option value="evento">Entretenimiento</option>
+          <option value="mascotas">Mascotas</option>
+    
+        </select>
+            <br>
+         <button type="submit">Siguiente</button>
+    
+      
+        </form>
+
+    <app-educacion-add [servicio]="servicio" *ngIf="showEducacion" ></app-educacion-add>
+
+    <app-mascotas-add [servicio]="servicio" *ngIf="showMascotas"></app-mascotas-add>
+  
+    <app-eventos-add [servicio]="servicio"   *ngIf="showEvento"></app-eventos-add>
+  
+        <h3>Ubicación</h3>
+        <app-localizacion  (onUbicated)="onUbicated($event)">></app-localizacion>
+    
+
+

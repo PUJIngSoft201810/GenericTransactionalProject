@@ -1,5 +1,6 @@
-.button {
-    background-color: #4CAF50;
+
+.buttonvolver {
+    background-color: #00FF00;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -10,4 +11,39 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.button {
+    background-color: white;
+    border: #4CAF50 solid;
+    border-block-end-color:  #4CAF50 ;
+    color:green;
+    padding: 10px 35px;
+    overflow:hidden;
+    -webkit-border-radius: 30px;
+  -moz-border-radius: 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:  #4CAF50;
+
+}
+button:before {
+    font-family: FontAwesome;
+    content:"\f044";
+    position: absolute;
+    top: 200px;
+    
+    right: -30px;
+    transition: all 200ms ease;
+   }
+   button:hover:before {
+    left: 7px;
+   }
+
+   
 

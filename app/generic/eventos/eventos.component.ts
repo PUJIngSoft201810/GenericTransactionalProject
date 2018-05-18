@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Evento } from '../share/clases/evento';
-import { EventoService } from '../share/services/evento.service';
+//import { EventoService } from '../share/services/evento.service';
+import { ServicioService } from '../share/services/servicio.service';
+
+
 
 @Component({
   selector: 'app-eventos',
@@ -11,10 +14,10 @@ export class EventosComponent implements OnInit {
 
   eventos: Evento[]=  [];
 
-  constructor(private service: EventoService) { }
+  constructor(private service: ServicioService) { }
 
   ngOnInit() {
-    this.eventos = this.service.findAll();
+    //this.eventos = this.service.findAll();
   }
 
 }

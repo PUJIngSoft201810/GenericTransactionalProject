@@ -1,0 +1,53 @@
+<br>  ID: {{evento.idServicio}}
+<br>Nombre: {{evento.nombre}}
+<br>Categoria: {{evento.categoria}}
+
+<br>Descripción: {{evento.descripcion}}
+<br>Dirección: {{evento.localizacion.direccion}}
+<br>Tipo de Evento: {{evento.categoriaEvento}}
+<br>Hora Inicio:{{evento.horaInicio}}
+<br>Fecha Inicio: {{evento.fechaInicio.toString()}}
+<br>Hora Fin:{{evento.horaFin}}
+<br>Hora Apertura de Puertas: {{evento.horaApertura}}
+<br>Restricciones: {{evento.restricciones}}
+<br>Edad minima: {{evento.edadMinima}}
+<br>Estado: {{evento.escenario.estado}}
+<br>Artistas:
+<ul>
+    <li *ngFor="let a of evento.artistas" >{{a}}</li>
+</ul>
+<br>Escenario: {{evento.escenario.nombre}}
+<br>Zonas:
+
+  <table border="1">
+    
+      <tr>
+        <th>Localidad</th>
+        <th>Precio</th>
+        <th>Servicio</th>
+        <th>Total</th>
+
+      </tr>
+    
+      <tr *ngFor="let l of evento.localidad">
+        <td>{{l.nombre}}</td>
+        <td >{{l.precio}}</td>
+        <td >{{l.servicio}}</td>
+        <td>{{sumar(l.precio,l.servicio)}}</td>
+        
+        
+      </tr>
+   
+  </table>    
+
+  
+  <a [routerLink]="[]" routerLinkActive='router-link-active'>
+      <button type="button" name="Volver">Participar</button>  
+    </a>
+  
+  <a [routerLink]="['/eventos']" routerLinkActive='router-link-active'>
+      <button type="button" name="Volver">Volver</button>  
+      </a>
+
+  
+    
