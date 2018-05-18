@@ -3,12 +3,18 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  
 </div>
+
+<a [routerLink]="['/publicar']" 
+
+      routerLinkActive='router-link-active'>Publicar </a>
+
+
 <app-login></app-login>
 
 <div class="recuadro">
 
 <router-outlet>
+
 </router-outlet>
 </div>

@@ -1,0 +1,12 @@
+<h2>  escenario-view works!</h2>
+
+
+<div class="area" appMovableArea>
+  <div  id="triangulo"  appMovable *ngFor="let z of zonas" [zona]="z" (onZona)="onZona($event)" height="z.posX+px" (click)="zonaView(z)">
+    {{ z.nombre }}
+  </div>
+
+  
+</div>
+
+<app-zona-view [zona]="zona" *ngIf="zonaV"  >  </app-zona-view>

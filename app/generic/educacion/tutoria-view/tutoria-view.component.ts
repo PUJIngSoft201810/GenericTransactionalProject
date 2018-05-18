@@ -15,7 +15,7 @@ export class TutoriaViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => this.id = +params['id']); // recuperar id
-    this.tutoria=this.service.finById(this.id);
+//    this.tutoria=this.service.finById(this.id);
   }
 
 }

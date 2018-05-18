@@ -1,0 +1,12 @@
+
+<h2>Area Movible</h2>
+
+<div class="area" appMovableArea>
+  <div  id="triangulo"  appMovable *ngFor="let z of zonas" [zona]="z" (onZona)="onZona($event)" height="z.posX+px">
+    {{ z.nombre }}
+  </div>
+
+  
+</div>
+
+<button (click)="guardar()">Guardar</button>

@@ -1,0 +1,82 @@
+
+
+<form (ngSubmit)="procesar()">
+  <h2>Escenario</h2> 
+
+  <label for="enombre">Nombre Escenario</label>
+  <input type="text"   name="enombre" id="enombre" [(ngModel)]="escenario.nombre" />
+
+  <br>
+  <br>
+  <h3>Zonas</h3>
+  <label for="nombre">Nombre</label>
+  <input type="text"   name="nombre" id="nombre" [(ngModel)]="zona.nombre" />
+  
+  <h4>Puestos</h4>
+  
+  <label for="codigo">Código</label>
+  <input type="text"   name="codigo" id="codigo" [(ngModel)]="puesto.codigo" />
+  <br>
+  <label for="fila">Fila</label>
+  <input type="text"   name="fila" id="fila" [(ngModel)]="puesto.fila" />
+  <br>
+  <label for="columna">Columna</label>
+  <input type="text"   name="columna" id="columna" [(ngModel)]="puesto.columna" />
+      
+
+
+  <button type="button" (click)="addPuesto()">Agregar Puesto</button>
+  <br>
+  <br>
+
+  <table border="1">
+    
+      <tr>
+        <th>Código</th>
+        <th>Fila</th>
+        <th>Columna</th>
+
+      </tr>
+    
+      <tr *ngFor="let p of puestos">
+          <td>{{p.codigo}}</td>
+          <td >{{p.fila}}</td>
+          <td >{{p.columna}}</td>
+          
+      </tr>
+   
+  </table>
+
+  <br>
+  <button type="button" (click)="addZona()">Agregar Zona</button>
+  <br>
+  <br>
+  <button type="submit"> Siguiente </button>
+  
+  <br>
+
+  <br>
+        
+      <table border="1">
+    
+        <tr>
+          <th>Zona</th>
+          <th>Aforo</th>
+
+        </tr>
+      
+        <tr *ngFor="let z of zonas">
+          <td>{{z.nombre}}</td>
+          <td >{{z.aforo}}</td>
+          
+        </tr>
+     
+    </table>
+
+
+
+</form>
+
+
+<app-draw-drop [zonas]="zonas"   *ngIf="draw"  (onZonas)="onZonas($event)" >
+</app-draw-drop>

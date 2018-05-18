@@ -1,28 +1,35 @@
 import { Injectable } from '@angular/core';
 import {Tutoria} from '../clases/tutoria';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class TutoriaService {
   tutorias: Tutoria[]=[];
-  constructor() { 
-    this.tutorias.push(new Tutoria(1, 'ADO' , ['UML', 'Patrones de diseño'],'Presencial','Mariela'));
-    this.tutorias.push(new Tutoria(2, 'POO' , ['Interfaces', 'UML'],'Virtual','Guillermo'));
+  constructor(
+    private http: HttpClient
+  ) { 
   }
 
-  finAll(){
-    return this.tutorias;
+  findAll(): Observable<Tutoria[]> {
+    return this.http.get<Tutoria[]>('http://localhost:8080/educacion');
   }
   finById(id:number){
-    return this.tutorias[id-1];
   }
   
   addTutoria(tutoria: Tutoria){
-    this.tutorias.push(tutoria); 
+    return this.http.post
+    ('http://localhost:8080/educacion/add',tutoria,{ 
+      headers: {
+        'Content-Type': 'application/json'
+    },
+      withCredentials: true}
+    , );
+    
   }
   editTutoria(tutoria: Tutoria){
-    this.tutorias[tutoria.id-1]=tutoria; 
   }
   deleteTutoria(id: number){
-     
+    return  this.http.get('http://localhost:8080/educacion/delete/'+id,{withCredentials: true});
   }
   getNewId(){
     return this.tutorias.length+1;

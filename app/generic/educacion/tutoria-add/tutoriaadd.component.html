@@ -1,0 +1,38 @@
+
+
+
+<form (ngSubmit)="procesarTutoria()">
+    <label for="id">id</label>
+    <input type="text" name="id" id="id" [(ngModel)]="tutoria.id" readonly/>
+    <br>
+    <label for="usuario">Usuario</label>
+    <input type="text" autofocus  name="usuario" id="usuario" [(ngModel)]="tutoria.usuario" placeholder="Escriba su usario"/>
+    <br>
+    <label for="categoria">Categoria</label>
+    <input type="text"   name="categoria" id="categoria" [(ngModel)]="tutoria.categoria" placeholder="Escriba la respectiva categoria"/>
+    <br>
+    <label for="tema">Temas</label>
+    
+    <input type="text"   name="tema" id="tema" [(ngModel)]="tema" placeholder="Escriba el tema"/>
+    <a (click)="addTema()">+</a>
+    <ul>
+      <li *ngFor="let t of tutoria.temas" >{{t}}</li>
+    </ul>
+    
+    <br>
+    <label for="tipo">Tipo</label>
+
+
+    <select name="tipo" id="tipo" [(ngModel)]="tutoria.tipo">
+        <option value="presencial">Presencial</option>
+        <option value="virtual">Virtual</option>
+    </select>
+    <br>
+    
+    <button type="submit">Guardar</button>
+
+    <a [routerLink]="['/educacion/ofertas']" 
+    routerLinkActive='router-link-active'>
+    <input type="button" value="Volver"/>
+    </a>
+  </form>

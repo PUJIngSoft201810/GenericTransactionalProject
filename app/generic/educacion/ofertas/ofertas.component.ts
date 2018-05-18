@@ -15,8 +15,27 @@ export class OfertasComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.tutorias=this.service.finAll();
+    
+  this.listar();  
+  }
+  deleteTutoria(tutoria:Tutoria){
+    alert("eliminar "+tutoria.id);
+
+    this.service.deleteTutoria(tutoria.id)
+    .subscribe(res =>{ 
+      this.listar();}
+      ,error=>{
+        alert("error");
+      });;
+    ;
+    
+  }
+  listar(){
+    this.service.findAll().subscribe(datos => {
+      this.tutorias = datos;
+    },
+    error => {     alert("error");
+  });
   
   }
-
 }
